@@ -1,0 +1,5 @@
+---
+- debug: var=ansible_version.full
+- command: ansible-galaxy collection list
+  register: coll
+- debug: var=coll.stdout
