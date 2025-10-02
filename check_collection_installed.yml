@@ -1,0 +1,17 @@
+---
+- name: Check the installed collection
+  hosts: localhost
+  gather_facts: true
+  become: true
+  tasks:
+    - name: Sheo Ansible version
+      ansible.builtin.debug:
+        msg: "{{ansible_version.full}}"
+
+    - name: Run command
+      ansible.builtin.command: ansible-galaxy collection list
+      register: col_result
+
+    - name: Show the installed collection
+      ansible.builtin.debug:
+        msg: "{{col_result.stdout}}"
