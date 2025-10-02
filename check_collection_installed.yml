@@ -4,7 +4,7 @@
   gather_facts: true
   become: true
   tasks:
-    - name: Sheo Ansible version
+    - name: Show Ansible version
       ansible.builtin.debug:
         msg: "{{ansible_version.full}}"
 
